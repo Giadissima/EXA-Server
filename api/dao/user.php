@@ -25,7 +25,7 @@
     }
 
     // inserisce un utente nel database
-    function insert_user($mail,  $username, $password, $tipo="U", $tel=""){
+    function insert_user($mail,  $username, $password, $tipo="C", $tel=""){
         $sql = "INSERT INTO utente(mail, num_telefono, tipo) VALUES(:mail, :tel, :tipo); SELECT LAST_INSERT_ID();";
         $stm = Database::conn()->prepare($sql);
         $stm->bindValue(':mail', $mail, PDO::PARAM_STR);
