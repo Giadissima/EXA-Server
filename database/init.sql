@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS indirizzo;
 DROP TABLE IF EXISTS acquisto;
 
 CREATE TABLE microcontrollore(
-      id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     prezzo_scontato DECIMAL(20, 2),
     comunicazione VARCHAR(45) NOT NULL,
     RAM INT NOT NULL,
@@ -26,13 +26,13 @@ CREATE TABLE microcontrollore(
 );
 
 CREATE TABLE catalogo(
-      id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45) NOT NULL,
     visibile TINYINT(1) NOT NULL
 );
 
 CREATE TABLE utente(
-      id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     mail VARCHAR(45) NOT NULL UNIQUE,
     num_telefono NUMERIC(10),
     -- S = super admin, C = client, A = administrator
@@ -72,7 +72,7 @@ CREATE TABLE n_catalogo(
 );
 
 CREATE TABLE credenziali(
-      id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(45) NOT NULL UNIQUE,
     password VARCHAR(128) NOT NULL,
     salt VARCHAR(60) NOT NULL,
@@ -85,9 +85,9 @@ CREATE TABLE credenziali(
 );
 
 CREATE TABLE indirizzo(
-      id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     n_civico INT NOT NULL,
-      via VARCHAR(60) NOT NULL,
+    via VARCHAR(60) NOT NULL,
     comune INT NOT NULL,
     provincia INT NOT NULL,
     paese INT NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE indirizzo(
 );
 
 CREATE TABLE acquisto(
-      id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     data DATE NOT NULL,
     microcontrollore INT NOT NULL,
     utente INT NOT NULL,

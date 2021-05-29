@@ -18,7 +18,7 @@
             $tel = "";
         else
             $tel = $_POST["number"];
-        insert_user($email, $username, $password, "U", $tel);
+        insert_user($email, $username, $password, "C", $tel);
         echo new Response("Completed", 200);
         die();
 
